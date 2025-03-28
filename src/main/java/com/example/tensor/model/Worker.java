@@ -23,6 +23,9 @@ public class Worker {
         this.id = id;
         this.name = name;
     }
+    public Worker(String name) {
+        this.name = name;
+    }
     public Worker() {}
     public long getId() {return id;}
     public String getName() {return name;}

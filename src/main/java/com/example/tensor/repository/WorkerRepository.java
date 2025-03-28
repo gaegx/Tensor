@@ -23,8 +23,11 @@ public class WorkerRepository {
 
     @PostConstruct
     public void initDatabase() {
-        String sql = "CREATE TABLE IF NOT EXIST workers (" +
-                ""+"id SERIAL PRIMARY KEY,"+"name VARCHAR(255), NOT NULL)"+"createdAt TIMESTAMPTZ DEFAULT now()";
+        String sql = "CREATE TABLE IF NOT EXISTS workers (" +
+                "id SERIAL PRIMARY KEY," +
+                "name VARCHAR(255) NOT NULL," +
+                "createdAt TIMESTAMPTZ DEFAULT now())";
+
         jdbcTemplate.execute(sql);
     }
 
