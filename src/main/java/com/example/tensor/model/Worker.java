@@ -19,14 +19,13 @@ public class Worker {
         this.ramUsage = ramUsage;
         this.diskUsage = diskUsage;
     }
-
-    public Worker() {}
-
-    public long getId() {
-        return id;
+    public Worker(long id, String name) {
+        this.id = id;
+        this.name = name;
     }
+    public Worker() {}
+    public long getId() {return id;}
     public String getName() {return name;}
-
     public boolean isActive() {return active;}
     public float getCpuUsage() {return cpuUsage;}
     public float getRamUsage() {return ramUsage;}
@@ -36,6 +35,5 @@ public class Worker {
     public void setRamUsage(float ramUsage) {this.ramUsage = ramUsage;}
     public void setDiskUsage(float diskUsage) {this.diskUsage = diskUsage;}
     public void setName(String name) {this.name = name;}
-    
 
 }
