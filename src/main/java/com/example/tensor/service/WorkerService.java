@@ -15,6 +15,7 @@ public class WorkerService {
     public WorkerService(WorkerRepository workerRepository) {
         this.workerRepository = workerRepository;
     }
+
     public List<Worker> getAllWorkers() {
         return workerRepository.FindAll();
     }
@@ -24,4 +25,5 @@ public class WorkerService {
     public void save(Worker worker) {
         workerRepository.save(worker);
     }
+
 }
