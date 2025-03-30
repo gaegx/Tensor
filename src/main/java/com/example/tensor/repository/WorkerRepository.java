@@ -49,6 +49,23 @@ public class WorkerRepository {
         String sql = "INSERT INTO workers (name) VALUES (?)";
         jdbcTemplate.update(sql, worker.getName());
     }
+    public void update(Worker worker) {
+        String sql = "UPDATE workers SET name = ? WHERE id = ?";
+        jdbcTemplate.update(sql, worker.getName(), worker.getId());
+    }
+    public void delete(Worker worker) {
+        String sql = "DELETE FROM workers WHERE id = ?";
+        jdbcTemplate.update(sql, worker.getId());
+    }
+    public List<Worker> findByName(String name) {
+        String sql = "SELECT * FROM workers WHERE name = ?";
+        try {
+            return jdbcTemplate.query(sql, workerMapper, name);
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
+
 
 
 

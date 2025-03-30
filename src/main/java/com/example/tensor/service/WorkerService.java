@@ -25,5 +25,11 @@ public class WorkerService {
     public void save(Worker worker) {
         workerRepository.save(worker);
     }
+    public void delete(Worker worker) {
+        workerRepository.delete(worker);
+    }
+    public List<Worker> findByName(String name) {
+        return workerRepository.findByName(name);
+    }
 
 }
