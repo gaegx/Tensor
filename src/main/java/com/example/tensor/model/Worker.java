@@ -1,8 +1,5 @@
 package com.example.tensor.model;
 
-
-
-
 public class Worker {
     private long id;
     private String name;
@@ -10,7 +7,7 @@ public class Worker {
     private float cpuUsage;
     private float ramUsage;
     private float diskUsage;
-
+    //Constructors
     public Worker(long id, String name, boolean active, float cpuUsage, float ramUsage, float diskUsage) {
         this.id = id;
         this.name = name;
@@ -27,6 +24,7 @@ public class Worker {
         this.name = name;
     }
     public Worker() {}
+    //Methods
     public long getId() {return id;}
     public String getName() {return name;}
     public boolean isActive() {return active;}

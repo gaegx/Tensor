@@ -31,5 +31,4 @@ public class WorkerService {
     public List<Worker> findByName(String name) {
         return workerRepository.findByName(name);
     }
-
 }

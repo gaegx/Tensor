@@ -24,7 +24,7 @@ public class WorkerRepository {
     @PostConstruct
     public void initDatabase() {
         String sql = "CREATE TABLE IF NOT EXISTS workers (" +
-                "id SERIAL PRIMARY KEY," +
+                "id SERIAL PRIMARY KEY AUTO_INCREMENT," +
                 "name VARCHAR(255) NOT NULL," +
                 "createdAt TIMESTAMPTZ DEFAULT now())";
 
