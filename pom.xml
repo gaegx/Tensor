@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>Tensor</artifactId>
+    <artifactId>tensor-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Tensor</name>
     <description>Tensor</description>
@@ -64,6 +64,11 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

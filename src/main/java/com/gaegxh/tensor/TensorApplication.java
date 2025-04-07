@@ -1,4 +1,4 @@
-package com.example.tensor;
+package com.gaegxh.tensor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
