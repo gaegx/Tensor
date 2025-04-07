@@ -1,4 +1,4 @@
-package com.example.tensor.model;
+package com.gaegxh.tensor.model;
 
 public class Worker {
     private long id;

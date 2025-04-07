@@ -1,7 +1,7 @@
-package com.example.tensor.service;
+package com.gaegxh.tensor.service;
 
-import com.example.tensor.model.Worker;
-import com.example.tensor.repository.WorkerRepository;
+import com.gaegxh.tensor.model.Worker;
+import com.gaegxh.tensor.repository.WorkerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

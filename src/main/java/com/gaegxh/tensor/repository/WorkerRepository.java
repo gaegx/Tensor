@@ -1,6 +1,6 @@
-package com.example.tensor.repository;
+package com.gaegxh.tensor.repository;
 
-import com.example.tensor.model.Worker;
+import com.gaegxh.tensor.model.Worker;
 import jakarta.annotation.PostConstruct;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
