@@ -6,10 +6,7 @@ import com.gaegxh.tensor.service.WorkerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/worker")
@@ -20,7 +17,7 @@ public class WorkerController {
         this.workerService = workerService;
     }
 
-    @PostMapping
+    @PostMapping("/auth")
     public ResponseEntity<Worker> createWorker(@RequestBody Worker worker) {
         try{
             workerService.save(worker);
@@ -30,6 +27,24 @@ public class WorkerController {
         }
         return new ResponseEntity<>(worker, HttpStatus.CREATED);
     }
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteWorker(@PathVariable int id) {
+        try {
+            var work= workerService.findById(id);
+            if(work==null){
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            workerService.delete(work);
+
+        }catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return ResponseEntity.ok("Удален");
+    }
+
+
+
+
 
 
 

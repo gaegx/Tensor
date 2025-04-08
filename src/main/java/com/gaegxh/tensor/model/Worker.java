@@ -3,6 +3,7 @@ package com.gaegxh.tensor.model;
 public class Worker {
     private long id;
     private String name;
+    private String region;
     private boolean active;
     private float cpuUsage;
     private float ramUsage;

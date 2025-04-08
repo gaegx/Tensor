@@ -19,7 +19,7 @@ public class WorkerService {
     public List<Worker> getAllWorkers() {
         return workerRepository.FindAll();
     }
-    public Worker getWorkerById(int id) {
+    public Worker findById(int id) {
         return workerRepository.findById(id);
     }
     public void save(Worker worker) {
@@ -31,4 +31,6 @@ public class WorkerService {
     public List<Worker> findByName(String name) {
         return workerRepository.findByName(name);
     }
+
+
 }
