@@ -21,11 +21,16 @@ public class WorkerRepository {
             new Worker(rs.getLong("id"), rs.getString("name"));
 
 
+
     @PostConstruct
     public void initDatabase() {
         String sql = "CREATE TABLE IF NOT EXISTS workers (" +
-                "id SERIAL PRIMARY KEY AUTO_INCREMENT," +
+                "id SERIAL PRIMARY KEY," +
                 "name VARCHAR(255) NOT NULL," +
+                "active BOOLEAN NOT NULL," +
+                "cpu_usage FLOAT NOT NULL," +
+                "ram_usage FLOAT NOT NULL," +
+                "disk_usage FLOAT NOT NULL," +
                 "createdAt TIMESTAMPTZ DEFAULT now())";
 
         jdbcTemplate.execute(sql);
@@ -49,14 +54,17 @@ public class WorkerRepository {
         String sql = "INSERT INTO workers (name) VALUES (?)";
         jdbcTemplate.update(sql, worker.getName());
     }
+
     public void update(Worker worker) {
         String sql = "UPDATE workers SET name = ? WHERE id = ?";
         jdbcTemplate.update(sql, worker.getName(), worker.getId());
     }
+
     public void delete(Worker worker) {
         String sql = "DELETE FROM workers WHERE id = ?";
         jdbcTemplate.update(sql, worker.getId());
     }
+
     public List<Worker> findByName(String name) {
         String sql = "SELECT * FROM workers WHERE name = ?";
         try {
@@ -65,8 +73,5 @@ public class WorkerRepository {
             return null;
         }
     }
-
-
-
 
 }
